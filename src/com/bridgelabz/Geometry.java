@@ -7,7 +7,7 @@ public class Geometry {
         int x1 = (int)Math.floor(Math.random() * 10);
 
         if (neg == 1) {
-            x1 *= -1;
+            x1 *= -1;  //it combines the result of combination  
         }
 
         neg = (int)Math.floor(Math.random() * 2);
