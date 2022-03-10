@@ -1,39 +1,13 @@
 package com.bridgelabz;
+
 import java.util.Scanner;
 
-class Geometry {
+public class Geometry {
 
-    public double equals(double x3, double y3, double x4, double y4, double length) {
-        System.out.println("Comparing two Lines and Resulting Accordingly");
-
-        double length2 = Math.sqrt(Math.pow((x4 - x3), 2) + Math.sqrt(Math.pow((y4 - y3), 2)));
-
-        if (length == length2) {
-            System.out.println("The Two lines are Equal");
-        } else {
-            System.out.println("The Two lines are not Equal");
-        }
-        return length2;
-    }
-    public void compareTo (double length, double length2) {
-
-        if (length == length2) {
-            System.out.println("The Two lines are Equal in Length");
-        }
-
-        else if (length > length2) {
-            System.out.println("The First line is Greater");
-        }
-
-        else {
-            System.out.println("The Second line is Greater");
-        }
-
-    }
-
-    public static void main(String[] args) {
+    public void calculateLength() {
 
         Geometry obj = new Geometry();
+
         Scanner read = new Scanner(System.in);
 
         System.out.print("Enter x1: ");
@@ -60,7 +34,7 @@ class Geometry {
         System.out.print("Enter y4: ");
         double y4 = read.nextDouble();
 
-        double length = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 -y1), 2));
+        double length = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
 
         System.out.println(" The first point is : (" + x1 + ", " + y1 + ")");
         System.out.println(" The second point is : (" + x2 + ", " + y2 + ")");
@@ -68,10 +42,36 @@ class Geometry {
         System.out.println(" The third point is : (" + x3 + ", " + y3 + ")");
         System.out.println(" The fourth point is : (" + x4 + ", " + y4 + ")");
 
-         double length2 = obj.equals(x3 , y3, x4, y4, length);
+        double length2 = obj.equals(x3, y3, x4, y4, length);
         System.out.println(" The length of the line is : " + length);
         System.out.println(" Second line length: " + length2);
 
-       obj.compareTo (length , length2);
+        obj.compareTo(length, length2);
     }
+
+    public double equals(double x3, double y3, double x4, double y4, double length) {
+        System.out.println("Comparing two Lines and Resulting Accordingly");
+
+        double length2 = Math.sqrt(Math.pow((x4 - x3), 2) + Math.sqrt(Math.pow((y4 - y3), 2)));
+
+        if (length == length2) {
+            System.out.println("The Two lines are Equal");
+        } else {
+            System.out.println("The Two lines are not Equal");
+        }
+        return length2;
+    }
+
+    public void compareTo(double length, double length2) {
+
+        if (length == length2) {
+            System.out.println("The Two lines are Equal in Length");
+        } else if (length > length2) {
+            System.out.println("The First line is Greater");
+        } else {
+            System.out.println("The Second line is Greater");
+        }
+
+    }
+
 }
